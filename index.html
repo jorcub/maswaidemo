@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MASWAI - Powered by Geophysics GPR</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    :root {
+      --deep-blue: #0039A6;
+      --bright-orange: #F04511;
+      --white: #FFFFFF;
+      --light-blue-gray: #E6EEF6;
+    }
+  </style>
+  <script>
+    function toggleLanguage() {
+      const isEnglish = document.documentElement.lang === 'en';
+      document.documentElement.lang = isEnglish ? 'fr' : 'en';
+      location.href = isEnglish ? 'index.html' : 'index_en.html';
+    }
+  </script>
+</head>
+<body class="bg-[var(--light-blue-gray)] text-gray-900">
+  <header class="bg-[var(--deep-blue)] shadow-md">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex flex-col md:flex-row md:justify-between items-center space-y-4 md:space-y-0">
+      <div class="flex items-center justify-center md:justify-start space-x-4">
+        <img src="images/logo-maswai.png" alt="MASWAI Logo" class="h-40" />
+        <img src="images/logo-geophysics-gpr.png" alt="Geophysics GPR Logo" class="h-12" />
+      </div>
+      <nav class="space-x-4">        
+        <a href="#services" class="text-white hover:text-[var(--bright-orange)]">Services</a>
+        <a href="#pricing" class="text-white hover:text-[var(--bright-orange)]">Pricing</a>
+        <a href="#how" class="text-white hover:text-[var(--bright-orange)]">How It Works</a>
+        <a href="#demo" class="text-white hover:text-[var(--bright-orange)]">Demo</a>
+		<a href="#booking" class="text-white hover:text-[var(--bright-orange)]">Schedule a Survey</a>
+        <a href="#contact" class="text-white hover:text-[var(--bright-orange)]">Contact</a>
+        <button onclick="toggleLanguage()" class="ml-4 bg-white text-[var(--deep-blue)] px-3 py-1 rounded">FR</button>
+      </nav>
+    </div>
+  </header>
+<section class="relative w-full min-h-[24rem] md:h-[32rem] overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <img id="heroCarousel" src="images/mt.png" alt="MASWAI Carousel" class="w-full h-full object-cover transition-opacity duration-1000 ease-in-out opacity-100 max-h-[32rem]" />
+  </div>
+  <div class="absolute inset-0 bg-black bg-opacity-50 z-10 flex flex-col justify-center items-center text-white text-center px-4">
+    <h2 class="text-4xl font-bold mb-4 drop-shadow-lg">50 years of experience power MASW-AI</h2>
+    <p class="text-lg mb-6 drop-shadow">Experts at your fingertips</p>
+    <a href="#services" class="text-white text-xl underline">↓ See Services</a>
+  </div>
+</section>
+
+<script>
+  const heroImages = ['images/mt.png', 'images/ot.png', 'images/qc.png'];
+  let heroIndex = 0;
+  const heroImg = document.getElementById('heroCarousel');
+
+  setInterval(() => {
+    heroImg.style.opacity = 0;
+    setTimeout(() => {
+      heroIndex = (heroIndex + 1) % heroImages.length;
+      heroImg.src = heroImages[heroIndex];
+      heroImg.style.opacity = 1;
+    }, 500); // délai de changement de source après fondu
+  }, 5000); // toutes les 5 secondes
+</script>
+<section class="py-16 max-w-6xl mx-auto px-4 text-center">
+  <h2 class="text-3xl font-bold mb-4 text-[var(--deep-blue)]">Smarter Subsurface Insights with MaswAI</h2>
+  <p class="text-lg mb-2">AI-powered tools for geophysics, geotechnics, and beyond</p>
+  <p class="mb-2">Unlock the full potential of your data with MaswAI’s intelligent, user-friendly platform. Designed for geoscientists, engineers, and researchers, our tools deliver fast, accurate, and actionable insights—helping you visualize subsurface behavior, perform precise picking, and generate critical geophysical data with ease.</p>
+  <p class="mt-4 font-semibold">Empower your projects with precision. Explore MaswAI today.</p>
+</section>
+
+<section id="services" class="py-16 max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8">Our Services</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold">Field Survey + Interpretation</h4>
+        <p class="mt-2">Turnkey service for $2000.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold">Automated Interpretation (MASWAI)</h4>
+        <p class="mt-2">$200. Fast delivery within 24h.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold">Engineer-Signed Interpretation</h4>
+        <p class="mt-2">$500. Certified report for official submissions.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow">
+        <h4 class="text-xl font-semibold">Monthly MASWAI Subscription</h4>
+        <p class="mt-2">$400 per month or $100 per on-demand survey.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="py-16 bg-white max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8">Pricing</h3>
+    <table class="w-full text-left border">
+      <thead class="bg-[var(--light-blue-gray)]">
+        <tr>
+          <th class="p-4">Service</th>
+          <th class="p-4">Price</th>
+          <th class="p-4">Delivery Time</th>
+          <th class="p-4">Includes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t">
+          <td class="p-4">Full MASW</td>
+          <td class="p-4">$2000</td>
+          <td class="p-4">48-72h</td>
+          <td class="p-4">Field + Interpretation</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-4">MASWAI Interpretation</td>
+          <td class="p-4">$200</td>
+          <td class="p-4">&lt; 24h</td>
+          <td class="p-4">Auto-generated report</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-4">Engineer-Signed Report</td>
+          <td class="p-4">$500</td>
+          <td class="p-4">24-48h</td>
+          <td class="p-4">Validated report</td>
+        </tr>
+        <tr class="border-t">
+          <td class="p-4">Monthly Subscription</td>
+          <td class="p-4">$400</td>
+          <td class="p-4">Unlimited</td>
+          <td class="p-4">Access to MASWAI</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="how" class="py-16 max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8">How It Works</h3>
+    <ol class="list-decimal ml-6 space-y-2">
+      <li>Upload your MASW data.</li>
+      <li>MASWAI automatically processes the profile.</li>
+      <li>Download the report in PDF/SEGY format.</li>
+      <li>Optional validation by engineer if needed.</li>
+    </ol>
+  </section>
+
+  <section id="demo" class="py-16 bg-[var(--light-blue-gray)] max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold mb-8">MASWAI Demo</h3>
+	<p class="mb-4">Examples of results automatically generated by MASWAI</p>
+	 <div id="carouselMaswAI" class="relative w-full max-w-4xl mx-auto">
+    <img id="carouselImage" src="images/dispersion_all_5.png" alt="Demo MASWAI" class="w-full rounded shadow" />
+  </div>
+  <script>
+    const images = [
+      'images/dispersion_all_5.png',
+      'images/dispersion_all_6.png',
+      'images/results_Model_DS24_6.png',
+      'images/results_Model_DS24_7_1.png'
+    ];
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+    }
+    shuffleArray(images);
+    let currentIndex = 0;
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('carouselImage').src = images[currentIndex];
+    }, 4000); // change every 4 seconds
+  </script>
+  <br>
+  <br>
+ 
+    <a href="images/Maia_User_guide_En_1_xas1UP3.pdf" target="_blank" class="text-[var(--deep-blue)] underline block mb-2">View Demo (PDF)</a>
+    <a href="https://maia-geo.com/" target="_blank" class="text-[var(--deep-blue)] underline">Also explore: maia-geo.com</a>
+  </section>
+
+<section id="booking" class="py-16 max-w-6xl mx-auto px-4">
+  <h3 class="text-3xl font-bold mb-8">Schedule Your Survey</h3>
+  <iframe 
+    src="https://forms.office.com/Pages/ResponsePage.aspx?id=3wbSJDeqY0qp4ud9qdWyT0bbiRiUo3dNnkBLA61j5z1URTJBOTFYODkxT1VUN0RXUDE1OTQ2STZCNy4u" 
+    width="100%" 
+    height="800" 
+    frameborder="0" 
+    title="MASWAI Booking Form">
+  </iframe>
+</section>
+
+<section id="contact" class="py-16 max-w-6xl mx-auto px-4">
+  <h3 class="text-3xl font-bold mb-8">Contact</h3>
+  <div class="text-lg leading-relaxed">
+    <p>100 - 2545 De Lorimier Street<br>
+    Longueuil (Québec)<br>
+    Canada J4K 3P7</p>
+    <p class="mt-4">Phone: +1 (450) 679-2400<br>
+    Fax: +1 (514) 521-4128<br>
+    <a href="mailto:info@geophysicsgpr.com" class="text-[var(--deep-blue)] underline">info@geophysicsgpr.com</a></p>
+  </div>
+</section>
+
+  <footer class="bg-[var(--deep-blue)] text-white text-center py-4 mt-10 shadow-inner">
+    <p>© 2025 MASWAI - Geophysics GPR. All rights reserved.</p>
+  </footer>
+</body>
+</html>
